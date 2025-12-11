@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import "tailwindcss";
 
 :root {
@@ -11,16 +15,102 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.font-inter {
+  font-family: var(--font-inter);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.font-basker {
+  font-family: var(--font-baskervville);
+}
+
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 83rem;
+  padding: 22rem 4.8rem 0;
+  margin-bottom: 12.5rem;
+}
+
+/* ---------------- BACKGROUND ---------------- */
+
+.hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero__background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  border-radius: 0px 0px 200px 200px;
+}
+
+.hero__background__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 0px 0px 200px 200px;
+}
+
+.hero__background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 200px 200px;
+}
+
+/* ---------------- HEADLINE ---------------- */
+
+.hero__headline {
+  margin-bottom: 6.5rem;
+  max-width: 60%;
+}
+
+.hero__headline--orange {
+  color: white;
+}
+
+/* ---------------- AUTHOR + PUBLISHED DATE ---------------- */
+
+.hero__author,
+.hero__published-at {
+  margin-top: 1rem;
+  color: white;
+  font-size: 1.8rem;
+}
+
+.hero__author {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero__published-at {
+  font-weight: 400;
+}
+
+/* ---------------- LOGO ---------------- */
+
+.hero__logo {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.hero__logo--orange {
+  filter: invert(62%) sepia(21%) saturate(1646%) hue-rotate(348deg)
+    brightness(88%) contrast(81%);
 }
